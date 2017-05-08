@@ -21,16 +21,32 @@
 
 // For generating the bindings from a linux machine define a
 // strict subset of the windows.h definitions.
-#ifdef __linux__
 #include <stdint.h>
+#ifndef DWORD
 #define DWORD uint32_t
-#define WORD uint16_t
-#define UINT64 uint64_t
-#define LPSTR char*
-#define BYTE uint8_t
-#define __stdcall
-#define PCAN_CHANNEL_ILLEGAL PCAN_CHANNEL_UNAVAILABLE
 #endif
+
+#ifndef WORD
+#define WORD uint16_t
+#endif
+
+#ifndef UINT64
+#define UINT64 uint64_t
+#endif
+
+#ifndef LPSTR
+#define LPSTR char*
+#endif
+
+#ifndef BYTE
+#define BYTE uint8_t
+#endif
+
+#ifndef __stdcall
+#define __stdcall
+#endif 
+
+#define PCAN_CHANNEL_ILLEGAL PCAN_CHANNEL_UNAVAILABLE
 
 ////////////////////////////////////////////////////////////
 // Value definitions

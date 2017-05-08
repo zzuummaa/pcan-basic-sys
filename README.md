@@ -4,6 +4,14 @@
 
 ![](https://img.shields.io/crates/v/pcan-basic-bindings.svg)
 
+## Building
+
+### Linux (not supported)
+### Windows
+
+- PCANBasic.dll must be installed and findable in your path.
+- lib.exe must be in your path (C:\\Program Files (x86)\\Microsoft Visual Studio 14.0\\VC\\bin\\lib.exe)
+
 ## [Documentation]
 
 [Documentation]: https://docs.rs/pcan-basic-bindings
