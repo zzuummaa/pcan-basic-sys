@@ -1,6 +1,6 @@
 [package]
 name = "pcan-basic-bindings"
-version = "0.1.0"
+version = "0.2.0"
 authors = ["Christopher J. Woodall <chris.j.woodall@gmail.com>"]
 repository = "https://github.com/cwoodall/pcan-basic-bindings"
 description = "Auto-generated Rust Bindings for The PCAN Basic API"
