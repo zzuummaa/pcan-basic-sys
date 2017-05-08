@@ -1,4 +1,4 @@
-# pcan-basic-bindings
+# pcan-basic-sys
 > Rust Bindings for the [PEAK-System Technik GmbH] [PCAN-Basic API] DLL
 > Derived from version 18.05.2016
 
