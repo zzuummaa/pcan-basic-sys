@@ -7,7 +7,11 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ## [Unreleased]
 ### Added
 
+- Added CHANGELOG.md
+
 ### Changed
+
+- Fixed URLS
 
 ## [0.2.0] - 2015-12-03
 
