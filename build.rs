@@ -1,6 +1,6 @@
 extern crate bindgen;
 
-use std::env;
+use std::{env, fs};
 use std::path::PathBuf;
 use std::process::Command;
 
@@ -28,8 +28,11 @@ fn main() {
 
     let out_dir = env::var("OUT_DIR").unwrap();
 
-    // Create .lib file for windows
-    if cfg!(windows) {
+    if cfg!(target_env = "gnu") {
+        let mut output_lib_path = PathBuf::from(&out_dir);
+        output_lib_path.push("PCANBasic.dll");
+        fs::copy("lib/PCANBasic.dll", output_lib_path).unwrap();
+    } else if cfg!(windows) {
         let machine = if cfg!(target_arch = "x86") {
                 "/Machine:X86"
             } else if cfg!(target_arch = "x86_64") {
@@ -40,10 +43,10 @@ fn main() {
 
 
         let mut output_lib_path = PathBuf::from(&out_dir);
-        output_lib_path.push("PCANBasic.lib");            
-        Command::new("lib.exe")
+        output_lib_path.push("PCANBasic.lib");
+        Command::new("link.exe")
             .args(&["/def:PCANBasic.def", &format!("/OUT:{}", output_lib_path.to_str().unwrap()), machine])
-            .status().expect("Could not run lib.exe");
+            .status().expect("Could not run link.exe");
     }
 
     println!("cargo:rustc-link-lib=PCANBasic");
